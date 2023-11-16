@@ -1,8 +1,8 @@
-from django.shortcuts import render, get_object_or_404, redirect
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.shortcuts import render
+from django.views import View
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from .models import Post
-from .forms import PostForm  # Import the form you'll create in the next step
+from .forms import PostForm
 
 class IndexView(View):
     def get(self, request, *args, **kwargs):
