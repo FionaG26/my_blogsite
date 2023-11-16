@@ -1,0 +1,11 @@
+<!-- blog/post_detail.html -->
+{% extends 'base.html' %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.content }}</p>
+    <p>Tags: {{ post.tags }}</p>
+    <!-- Add more details or customize as needed -->
+{% endblock %}
