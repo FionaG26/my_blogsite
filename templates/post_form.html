@@ -1,0 +1,34 @@
+<!-- blog/post_form.html -->
+{% extends 'base.html' %}
+
+{% block title %}Create or Update Post{% endblock %}
+
+{% block content %}
+    <h1>{% if form.instance.pk %}Update{% else %}Create{% endif %} Post</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.title.label_tag }}
+            {{ form.title }}
+            {% if form.title.errors %}
+                <div class="text-danger">{{ form.title.errors.0 }}</div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.content.label_tag }}
+            {{ form.content }}
+            {% if form.content.errors %}
+                <div class="text-danger">{{ form.content.errors.0 }}</div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.tags.label_tag }}
+            {{ form.tags }}
+            {% if form.tags.errors %}
+                <div class="text-danger">{{ form.tags.errors.0 }}</div>
+            {% endif %}
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+    <a href="{% url 'post_list' %}">Cancel</a>
+{% endblock %}
