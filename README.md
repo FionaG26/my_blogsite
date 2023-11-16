@@ -64,6 +64,7 @@ blogsite/
 │   ├── models.py
 │   ├── tests.py
 │   └── views.py
+│   └── forms.py
 │
 ├── static/
 │   ├── css/
