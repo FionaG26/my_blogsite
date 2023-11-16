@@ -4,6 +4,14 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from .models import Post
 from .forms import PostForm  # Import the form you'll create in the next step
 
+class IndexView(View):
+    def get(self, request, *args, **kwargs):
+        # Retrieve the latest posts from the database
+        latest_posts = Post.objects.order_by('-pub_date')[:5]
+        
+        # Render the template with the latest posts
+        return render(request, 'blog/index.html', {'latest_posts': latest_posts})
+
 class PostListView(ListView):
     model = Post
     template_name = 'blog/post_list.html'
