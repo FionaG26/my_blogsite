@@ -137,7 +137,3 @@ git commit -m "Initial Commit"
 ```
 Django==3.2.9
 ```
-
-This `requirements.txt` file includes Django version 3.2.9, which is based on your Python environment and the Django version mentioned in the provided README.
-
-Feel free to modify the README file further based on additional information about your project or any specific instructions you want to provide.
