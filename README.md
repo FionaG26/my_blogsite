@@ -131,7 +131,6 @@ git commit -m "Initial Commit"
 4. Set up a production database (e.g., PostgreSQL) and update the database settings in `blogsite/settings.py`.
 5. Follow best practices for securing your production environment.
 
-```
 
 ### requirements.txt
 
